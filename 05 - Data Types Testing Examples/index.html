@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1>Welcome to vue.js course</h1>
+      <p>Welcome {{ `Mr/ ${name}` }} we are happy to see you</p>
+      <p>Your age is: {{ age + ' years' }}</p>
+      <p>Your first skill is: {{ skills[0] }}</p>
+      <p>You are {{ isSubscribed ? 'subscribed' : 'not subscribed' }}</p>
+      <p>Your first test name is: {{ completedTests[0].testName }}</p>
+      <p>Your first test result is: {{ completedTests[0].testResult }}</p>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=4PAuxryv9CA&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=5"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#elzero-app",
+        data: {
+          name: "Mahmoud",
+          age: 35,
+          skills: ["HTML", "CSS", "JS"],
+          isSubscribed: false,
+          completedTests: [
+            {
+              testName: "First test",
+              testResult: "80%",
+            },
+            {
+              testName: "Second test",
+              testResult: "70%",
+            },
+            {
+              testName: "Third test",
+              testResult: "90%",
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

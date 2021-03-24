@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1>Welcome to vue.js course</h1>
+      <p>Welcome {{ `Mr/ ${name}` }} we are happy to see you</p>
+      <p v-text="name"></p>
+      <p v-html="title"></p>
+      <p v-text="'Mr/ ' + name"></p>
+      <!-- <p v-text="name ? 'Your name is set' : 'your name is not set'"></p> -->
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=YTuYOWvDbig&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=7"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#elzero-app",
+        data: {
+          name: "Mahmoud",
+          title: "<b class='rank'>Nooob</b>",
+        },
+      });
+    </script>
+  </body>
+</html>

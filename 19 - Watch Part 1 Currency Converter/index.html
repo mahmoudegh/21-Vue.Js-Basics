@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1 style="text-align: center">Welcome to vue.js course</h1>
+      <label>Egyptian Pound</label>
+      <input type="text" v-model="eg" />
+      <label>Saudi Riyal</label>
+      <input type="text" v-model="sar" />
+    </div>
+
+    <div class="vid-link" style="margin-top: 30px">
+      <a
+        href="https://www.youtube.com/watch?v=pJ1Hl_oKpYY&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=19"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#elzero-app",
+
+        data: {
+          eg: 0,
+          sar: 0,
+        },
+
+        methods: {},
+
+        computed: {},
+
+        watch: {
+          eg: function (v) {
+            this.sar = v / 5;
+            console.log("Eg Run");
+          },
+
+          sar: function (v) {
+            this.eg = v * 5;
+            console.log("Sar Run");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

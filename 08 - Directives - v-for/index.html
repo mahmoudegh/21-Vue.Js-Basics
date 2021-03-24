@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1>Welcome to vue.js course</h1>
+      <ul>
+        <li v-for="skill in skills">{{ skill }}</li>
+      </ul>
+      <ul>
+        <li v-for="(skill, index) in skills">{{index}} => {{ skill }}</li>
+      </ul>
+      <ul>
+        <li v-for="(test, index) in completedTests">{{index}} => {{ test.testName }} => {{ test.testResult}}</li>
+      </ul>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=3OUHJpreUic&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=8"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#elzero-app",
+        data: {
+          name: "Mahmoud",
+          date: "Today",
+          age: 35,
+          skills: ["HTML", "CSS", "JavaScript", "Vue.Js"],
+          isSubScribed: false,
+          theDate: "",
+          completedTests: [
+            {
+              testName: "Test number one",
+              testResult: "80%",
+            },
+            {
+              testName: "Test number one",
+              testResult: "70%",
+            },
+            {
+              testName: "Test number one",
+              testResult: "90%",
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

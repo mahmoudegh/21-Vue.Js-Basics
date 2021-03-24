@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1 style="text-align: center">Welcome to vue.js course</h1>
+      <p>Welcome {{ name }}</p>
+      <a v-bind:href="imageUrl">
+        <img :src="imageSrc" :alt="imageAltText" />
+      </a>
+      <p>Counter is {{ counter }}</p>
+      <button @click.right="counter += 2">Increase Counter</button>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=Tppzx1HAG64&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=11"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#elzero-app",
+        data: {
+          name: "Mahmoud",
+          imageSrc: "img/01.png",
+          imageAltText: "The alternate text",
+          imageUrl: "https://www.google.com",
+          counter: 0,
+        },
+      });
+    </script>
+  </body>
+</html>

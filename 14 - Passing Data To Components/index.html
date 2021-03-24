@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <!-- <body>
+    <div id="elzero-app">
+      <h1 style="text-align: center">Welcome to vue.js course</h1>
+      <app-count :source="source" :url="url"></app-count>
+      <app-count :source="source" :url="url"></app-count>
+      <app-count :source="source" :url="url"></app-count>
+      <app-count :source="source" :url="url"></app-count>
+      <app-count :source="source" :url="url"></app-count>
+      <app-count :source="source" :url="url"></app-count>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=APKFjjPn6fE&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=14"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      Vue.component("app-count", {
+        data: function () {
+          return {
+            name: "Osama",
+            count: 0,
+          };
+        },
+        props: ["source", "url"],
+        template:
+          "<p @click='count++'>Hello {{name}} you clicked paragraph {{count}} times and source is: {{source}} and URL is: {{url}} </p>",
+      });
+      var vm = new Vue({
+        el: "#elzero-app",
+        data: {
+          name: "Mahmoud",
+          source: "Elzero Web School",
+          url: "https://www.elzero.org",
+        },
+      });
+    </script>
+  </body> -->
+  <body>
+    <div id="elzero-app">
+      <h1 style="text-align: center">Welcome to vue.js course</h1>
+      <app-article v-for="post in posts" :title="post.title" :auther="post.auther"></app-article>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=APKFjjPn6fE&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=14"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      Vue.component("app-article", {
+        data: function () {
+          return {
+            count: 0,
+          };
+        },
+        props: ["title", "auther"],
+        template: "<p>Article title is {{title}} and written by {{auther}} </p>",
+      });
+      var vm = new Vue({
+        el: "#elzero-app",
+        data: {
+          posts: [
+            { id: 1, auther: "Osama", title: "Article number one" },
+            { id: 2, auther: "Mahmoud", title: "Article number two" },
+            { id: 3, auther: "Galal", title: "Article number three" },
+            { id: 4, auther: "Ahmed", title: "Article number four" },
+            { id: 5, auther: "Ali", title: "Article number five" },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

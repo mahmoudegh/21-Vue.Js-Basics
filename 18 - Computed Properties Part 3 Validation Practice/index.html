@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1 style="text-align: center">Welcome to vue.js course</h1>
+      <label>Write your username:</label>
+      <input type="text" v-model="username" />
+      <p>{{validateUsername}}</p>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=UC6oJ3O299c&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=18"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#elzero-app",
+
+        data: {
+          username: "",
+        },
+
+        methods: {},
+
+        computed: {
+          validateUsername: function () {
+            if (!this.username) {
+              return "Username can't be empty";
+            } else if (this.username.length < 8) {
+              return "Username is too short";
+            } else if (!isNaN(this.username)) {
+              return "Username can't be numbers only";
+            } else {
+              return "Hello " + this.username + " Everything Is Good";
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

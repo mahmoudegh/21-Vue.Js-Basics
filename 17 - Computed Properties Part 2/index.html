@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1 style="text-align: center">Welcome to vue.js course</h1>
+      <label>Search for programming languges:</label>
+      <input type="text" v-model="findLanguage" />
+      <ul>
+        <li v-for="lang in filterLanguages">{{lang}}</li>
+      </ul>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=M0kHgTB3JnI&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=17"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#elzero-app",
+
+        data: {
+          age: 35,
+          message: "Elzero Web School",
+          firstName: "Mahmoud",
+          lastName: "Galal",
+          findLanguage: "",
+          languages: ["Html", "Css", "Sass", "Javascript", "PHP", "MySql", "Paython", "C#", "Java"],
+        },
+
+        methods: {},
+
+        computed: {
+          filterLanguages: function () {
+            var filtering = new RegExp(this.findLanguage, "i");
+            return this.languages.filter(function (el) {
+              return el.match(filtering);
+            });
+            // return this.languages.filter((el) => el.match(filtering)); // By ES6
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

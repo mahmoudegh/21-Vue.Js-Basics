@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1 style="text-align: center">Welcome to vue.js course</h1>
+      <p>{{calcAge}}</p>
+      <p>{{calcAge}}</p>
+      <p>{{calcAge}}</p>
+      <p>{{calcAge}}</p>
+      <p>{{calcAge}}</p>
+      <!-- <p>{{calcAge()}}</p>
+      <p>{{calcAge()}}</p>
+      <p>{{calcAge()}}</p>
+      <p>{{calcAge()}}</p>
+      <p>{{calcAge()}}</p> -->
+      <p>{{age}}</p>
+      <p>{{reverseMsg}}</p>
+      <p>{{reverseMsg}}</p>
+      <p>{{reverseMsg}}</p>
+      <p>{{reverseMsg}}</p>
+      <p>{{reverseMsg}}</p>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=DnJIDTcfWdk&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=16"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: "#elzero-app",
+        data: {
+          age: 35,
+          message: "Elzero Web School",
+        },
+
+        methods: {
+          // calcAge: function () {
+          //   console.log("Run");
+          //   return this.age * 2;
+          // },
+          // reverseMsg: function () {
+          //   console.log("Run");
+          //   return this.message.split("").reverse().join("");
+          // },
+        },
+
+        computed: {
+          calcAge: function () {
+            console.log("Run");
+            return this.age * 2;
+          },
+
+          reverseMsg: function () {
+            console.log("Run");
+            return this.message.split("").reverse().join("");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

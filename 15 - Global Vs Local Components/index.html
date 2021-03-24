@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.Js Basics</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="elzero-app">
+      <h1 style="text-align: center">Welcome to vue.js course</h1>
+      <app-article></app-article>
+      <app-article-item></app-article-item>
+    </div>
+    <div class="vid-link">
+      <a
+        href="https://www.youtube.com/watch?v=Q0rh66FrUvg&list=PLDoPjvoNmBAxr5AqK3Yz4DWYKVSmIFziw&index=15"
+        target="blank"
+        >Video Of The Course</a
+      >
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      ///////////////////////// Local Component /////////////////////////////
+      var AppArticle = {
+        data: function () {
+          return {
+            count: 0,
+          };
+        },
+        template: "<p>Test</p>",
+      };
+
+      ///////////////////////// Local Component /////////////////////////////
+      var AppArticleItem = {
+        data: function () {
+          return {
+            count: 0,
+          };
+        },
+        template: "<p>Item</p>",
+      };
+
+      /////////////////////// Global Component ///////////////////////
+      /*
+      Vue.component("AppArticle", {
+        data: function () {
+          return {
+            count: 0,
+          };
+        },
+        template: "<p>Test</p>",
+      });
+
+      Vue.component("AppArticleItem", {
+        data: function () {
+          return {
+            count: 0,
+          };
+        },
+        template: "<p>Item</p>",
+      });
+      */
+
+      var vm = new Vue({
+        el: "#elzero-app",
+        data: {},
+
+        // Call locally regestred component
+        components: {
+          "app-article": AppArticle,
+          "app-article-item": AppArticleItem,
+        },
+      });
+    </script>
+  </body>
+</html>
